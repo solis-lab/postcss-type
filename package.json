@@ -1,6 +1,6 @@
 {
   "name": "@solislab/postcss-type",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PostCSS plugin to support responsive typography shorthands.",
   "keywords": [
     "postcss",
