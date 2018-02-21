@@ -1,0 +1,48 @@
+{
+  "name": "postcss-typography",
+  "version": "0.0.0",
+  "description": "PostCSS plugin to support responsive typography shorthands.",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "typography",
+    "font-size",
+    "line-height",
+    "letter-spacing"
+  ],
+  "author": "Gary Cao <gary@solislab.com>",
+  "license": "MIT",
+  "repository": "garyc40/postcss-typography",
+  "bugs": {
+    "url": "https://github.com/garyc40/postcss-typography/issues"
+  },
+  "homepage": "https://github.com/garyc40/postcss-typography",
+  "dependencies": {
+    "lodash.curry": "^4.1.1",
+    "postcss": "^6.0.16"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^22.4.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.15.0",
+    "eslint-config-postcss": "^2.0.2",
+    "jest": "^22.4.0",
+    "onchange": "^3.3.0",
+    "regenerator-runtime": "^0.11.1",
+    "standard": "^11.0.0"
+  },
+  "scripts": {
+    "test": "jest --verbose && npx standard --fix ./src/**/*.js",
+    "build": "npx babel ./src/main.js -o index.js && npm test",
+    "start": "npx onchange -i './src/main.js' './index.test.js' -- npm run build"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-postcss/es5",
+    "env": {
+      "jest": true
+    }
+  }
+}
