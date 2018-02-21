@@ -34,9 +34,10 @@ const createMediaRule = media => postcss.atRule({ name: `media (${media})` })
  * @return {postcss.Declaration | undefined}
  */
 const createDecl = (key, value, source) => {
-  if (!value || value === '/') {
+  if (typeof value === 'undefined' || value === '/') {
     return undefined
   } else {
+    value = String(value)
     const decl = postcss.decl({ prop: key, value: value })
     decl.source = source.source
     return decl
@@ -140,11 +141,11 @@ export default postcss.plugin('postcss-type', (options = {}) => {
       }
 
       if (fontSize && fontSize !== '/') {
-        if (lineHeight && isPx(lineHeight)) {
+        if (typeof lineHeight !== 'undefined' && isPx(lineHeight)) {
           lineHeight = pxToRatio(lineHeight, fontSize)
         }
 
-        if (letterSpacing && isPx(letterSpacing)) {
+        if (typeof letterSpacing !== 'undefined' && isPx(letterSpacing)) {
           letterSpacing = pxToEm(letterSpacing, fontSize)
         }
       }
