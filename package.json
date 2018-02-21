@@ -13,11 +13,11 @@
   ],
   "author": "Gary Cao <gary@solislab.com>",
   "license": "MIT",
-  "repository": "garyc40/postcss-typography",
+  "repository": "Solis-Lab-Solution/postcss-typography",
   "bugs": {
-    "url": "https://github.com/garyc40/postcss-typography/issues"
+    "url": "https://github.com/Solis-Lab-Solution/postcss-typography/issues"
   },
-  "homepage": "https://github.com/garyc40/postcss-typography",
+  "homepage": "https://github.com/Solis-Lab-Solution/postcss-typography",
   "dependencies": {
     "lodash.curry": "^4.1.1",
     "postcss": "^6.0.16"

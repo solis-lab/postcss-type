@@ -3,8 +3,8 @@
 [PostCSS] plugin to support responsive typography shorthands..
 
 [PostCSS]: https://github.com/postcss/postcss
-[ci-img]:  https://travis-ci.org/garyc40/postcss-typography.svg
-[ci]:      https://travis-ci.org/garyc40/postcss-typography
+[ci-img]:  https://travis-ci.org/Solis-Lab-Solution/postcss-typography.svg
+[ci]:      https://travis-ci.org/Solis-Lab-Solution/postcss-typography
 
 Input: 
 
