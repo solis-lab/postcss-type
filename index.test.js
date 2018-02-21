@@ -3,7 +3,7 @@ import postcss from 'postcss'
 import plugin from './'
 
 const ERROR_MISSING = 'Missing typography declarations for @type.'
-const ROOT_SIZE_UNIT = 'rootSize option for postcss-typography must be in pixel unit.'
+const ROOT_SIZE_UNIT = 'rootSize option for postcss-type must be in pixel unit.'
 
 const expectEqual = (input, output, opts) => {
   expect.assertions(2)

@@ -1,5 +1,5 @@
 {
-  "name": "postcss-typography",
+  "name": "@solislab/postcss-type",
   "version": "1.0.0",
   "description": "PostCSS plugin to support responsive typography shorthands.",
   "keywords": [
@@ -11,13 +11,13 @@
     "line-height",
     "letter-spacing"
   ],
-  "author": "Gary Cao <gary@solislab.com>",
+  "author": "Solis Lab <info@solislab.com>",
   "license": "MIT",
-  "repository": "Solis-Lab-Solution/postcss-typography",
+  "repository": "solis-lab/postcss-type",
   "bugs": {
-    "url": "https://github.com/Solis-Lab-Solution/postcss-typography/issues"
+    "url": "https://github.com/solis-lab/postcss-type/issues"
   },
-  "homepage": "https://github.com/Solis-Lab-Solution/postcss-typography",
+  "homepage": "https://github.com/solis-lab/postcss-type",
   "dependencies": {
     "lodash.curry": "^4.1.1",
     "postcss": "^6.0.16"

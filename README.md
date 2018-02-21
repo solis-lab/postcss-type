@@ -3,8 +3,8 @@
 [PostCSS] plugin to support responsive typography shorthands..
 
 [PostCSS]: https://github.com/postcss/postcss
-[ci-img]:  https://travis-ci.org/Solis-Lab-Solution/postcss-typography.svg
-[ci]:      https://travis-ci.org/Solis-Lab-Solution/postcss-typography
+[ci-img]:  https://travis-ci.org/solis-lab/postcss-type.svg
+[ci]:      https://travis-ci.org/solis-lab/postcss-type
 
 Input: 
 
@@ -78,7 +78,7 @@ Output:
 Because this plugin relies on [custom media queries](http://cssnext.io/features/#custom-media-queries), you are recommended to run it before `postcss-cssnext` or `postcss-custom-media`
 
 ```js
-postcss([ require('postcss-typography')({rootSize: '16px'}), require('postcss-custom-media') ])
+postcss([ require('postcss-type')({rootSize: '16px'}), require('postcss-custom-media') ])
 ```
 
 See [PostCSS] docs for examples for your environment.

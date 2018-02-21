@@ -157,12 +157,12 @@ var pxToRem = function pxToRem(val, ref) {
 /**
  * PostCSS plugin to allow using `@type <media> <font-size> <line-height> <letter-spacing>` syntax
  */
-exports.default = postcss.plugin('postcss-typography', function () {
+exports.default = postcss.plugin('postcss-type', function () {
   var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
   return function (root) {
     if (options.rootSize && !isPx(options.rootSize)) {
-      throw root.error('rootSize option for postcss-typography must be in pixel unit.');
+      throw root.error('rootSize option for postcss-type must be in pixel unit.');
     }
 
     root.walkAtRules('type', function (atRule) {

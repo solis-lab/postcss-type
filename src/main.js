@@ -122,10 +122,10 @@ const pxToRem = (val, ref) => pxToRatio(val, ref) + 'rem'
 /**
  * PostCSS plugin to allow using `@type <media> <font-size> <line-height> <letter-spacing>` syntax
  */
-export default postcss.plugin('postcss-typography', (options = {}) => {
+export default postcss.plugin('postcss-type', (options = {}) => {
   return root => {
     if (options.rootSize && !isPx(options.rootSize)) {
-      throw root.error('rootSize option for postcss-typography must be in pixel unit.')
+      throw root.error('rootSize option for postcss-type must be in pixel unit.')
     }
 
     root.walkAtRules('type', atRule => {
