@@ -30,6 +30,7 @@
     "eslint": "^4.15.0",
     "eslint-config-postcss": "^2.0.2",
     "jest": "^22.4.0",
+    "npx": "^9.7.1",
     "onchange": "^3.3.0",
     "regenerator-runtime": "^0.11.1",
     "standard": "^11.0.0"
