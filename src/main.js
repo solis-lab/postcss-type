@@ -22,7 +22,7 @@ import curry from 'lodash.curry'
  * @param {string} media
  * @return {postcss.AtRule}
  */
-const createMediaRule = media => postcss.atRule({ name: `media (${media})` })
+const createMediaRule = media => postcss.atRule({ name: `media`, params: `(${media})` })
 
 /**
  * Create a declaration for a pair of key and value. Doesn't do anything if

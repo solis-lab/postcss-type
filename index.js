@@ -40,7 +40,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * @return {postcss.AtRule}
  */
 var createMediaRule = function createMediaRule(media) {
-  return postcss.atRule({ name: 'media (' + media + ')' });
+  return postcss.atRule({ name: 'media', params: '(' + media + ')' });
 };
 
 /**
