@@ -158,3 +158,12 @@ it('supports font-size, line-height, letter-spacing while omitting media query',
     expected
   )
 })
+
+it('supports declaring font-size, line-height and letter-spacing with declaration', () => {
+  const expected = 'h1 { @media (--s) { font-size: 10px; line-height: 1.5; letter-spacing: 0.1em } }'
+
+  return expectEqual(
+    'h1 { type: --s 10px 15px 1px; }',
+    expected
+  )
+})

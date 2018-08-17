@@ -129,15 +129,14 @@ export default postcss.plugin('postcss-type', (options = {}) => {
       throw root.error('rootSize option for postcss-type must be in pixel unit.')
     }
 
-    root.walkAtRules('type', atRule => {
-      let frags = atRule.params.split(/\s+/)
-
+    const createFromValue = (value, rule) => {
+      const frags = value.split(/\s+/)
       const media = (frags.length && isCustomMedia(frags[0])) ? frags.shift() : undefined
 
       let [fontSize, lineHeight, letterSpacing] = frags
 
       if (!fontSize) {
-        throw atRule.error('Missing typography declarations for @type.')
+        throw rule.error('Missing typography declarations for @type.')
       }
 
       if (fontSize && fontSize !== '/') {
@@ -160,16 +159,26 @@ export default postcss.plugin('postcss-type', (options = {}) => {
 
       const insertTypeDecls = media
         ? appendDecl(mediaRule)
-        : insertDeclBefore(atRule.parent, atRule)
+        : insertDeclBefore(rule.parent, rule)
 
-      insertTypeDecls(createDecl('font-size', fontSize, atRule))
-      insertTypeDecls(createDecl('line-height', lineHeight, atRule))
-      insertTypeDecls(createDecl('letter-spacing', letterSpacing, atRule))
+      insertTypeDecls(createDecl('font-size', fontSize, rule))
+      insertTypeDecls(createDecl('line-height', lineHeight, rule))
+      insertTypeDecls(createDecl('letter-spacing', letterSpacing, rule))
 
       if (mediaRule) {
-        atRule.replaceWith(mediaRule)
+        rule.replaceWith(mediaRule)
       } else {
-        atRule.remove()
+        rule.remove()
+      }
+    }
+
+    root.walk(rule => {
+      if (rule.type === 'atrule' && rule.name === 'type') {
+        createFromValue(rule.params, rule)
+      }
+
+      if (rule.type === 'decl' && rule.prop === 'type') {
+        createFromValue(rule.value, rule)
       }
     })
   }
